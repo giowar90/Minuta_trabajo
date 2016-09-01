@@ -9,7 +9,7 @@
 	<link rel="shortcut icon" href="img/favicon.png">
 
 	<title>Minutas de Trabajo</title>
-
+	
 	<link href="<?php echo base_url('font-awesome/css/font-awesome.css')?>" rel="stylesheet">
 	<!-- Bootstrap CSS -->    
 	<link href="<?php echo base_url('css/bootstrap.min.css') ?>" rel="stylesheet">
@@ -22,6 +22,20 @@
 	<!-- Custom styles -->
 	<link href="<?php echo base_url('css/style.css') ?>" rel="stylesheet">
 	<link href="<?php echo base_url('css/style-responsive.css') ?>" rel="stylesheet" />
+	<!-- Alerts -->
+	<link href="<?php echo base_url('css/sweetalert2.min.css') ?>" rel="stylesheet" />
+
+	<!-- javascripts -->
+	
+	<script src="<?php echo base_url('js/jquery-2.1.1.js') ?>"></script>
+	<script src="<?php echo base_url('js/jquery.validate.min.js');?>"></script>
+	<script src="<?php echo base_url('js/bootstrap.min.js') ?>"></script>
+	<!-- nice scroll -->
+	<script src="<?php echo base_url('js/jquery.scrollTo.min.js') ?>"></script>
+	<script src="<?php echo base_url('js/jquery.nicescroll.js') ?>" type="text/javascript"></script><!--custome script for all page-->
+	<script src="<?php echo base_url('js/scripts.js') ?>"></script>
+	<!-- Alerts -->
+	<script src="<?php echo base_url('js/sweetalert2.min.js') ?>"></script>
 
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 -->
 	<!--[if lt IE 9]>
