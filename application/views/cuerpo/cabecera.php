@@ -68,7 +68,7 @@
 							<span class="profile-ava">
 								<i class="fa fa-user fa-lg"></i>
 							</span>
-							<span class="username">Jenifer Smith</span>
+							<span class="username"><?php echo $this->session->userdata("nombre"); ?></span>
 							<b class="caret"></b>
 						</a>
 						<ul class="dropdown-menu extended logout">
@@ -77,7 +77,7 @@
 								<a href="#"><i class="fa fa-user"></i> Perfil</a>
 							</li>
 							<li>
-								<a href="login.html"><i class="icon_key_alt"></i> Cerrar sesión</a>
+								<a href="<?php echo base_url('') ?>"><i class="icon_key_alt"></i> Cerrar sesión</a>
 							</li>
 						</ul>
 					</li>

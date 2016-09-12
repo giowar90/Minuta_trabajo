@@ -69,4 +69,41 @@ class minutas extends CI_Controller {
 		$this->load->view('cuerpo/pie');
 	}
 
+	public function ver_minuta($id_minutas){
+		$this->load->model('menu_model','mm');
+		$this->load->model('minutas_model','mim');
+		$data['menu'] = $this->mm-> menu();
+		$data['minuta'] = $this->mim->minuta_detalles($id_minutas);
+		$data['asistentes'] = $this->mim->actividades($id_minutas);
+		$this->load->view('cuerpo/cabecera');
+		$this->load->view('cuerpo/menu',$data);
+		$this->load->view('minutas/ver_minuta');
+		$this->load->view('cuerpo/pie');
+	}
+
+	public function minutas_actividades(){
+		$this->load->model('menu_model','mm');
+		$this->load->model('actividades_model','acm');
+		$data['menu'] = $this->mm-> menu();
+		$id_responsable = $this->session->userdata("id_usuario");
+		$data['actividades'] = $this->acm->get_actividades($id_responsable);
+		$this->load->model('menu_model','mm');
+		$this->load->view('cuerpo/cabecera');
+		$this->load->view('cuerpo/menu',$data);
+		$this->load->view('minutas/actividades',$data);
+		$this->load->view('cuerpo/pie');
+	}
+
+	public function terminar_actividad(){
+		$this->load->model('actividades_model','acm');
+		$id_actividad = array('id_actividades' => $this->input->post('actividad') );
+		$datos = array('estatus' => 2);
+		$response = $this->acm->estatus_actividad($datos,$id_actividad);
+		if($response){
+			echo $response;
+		} else{
+			echo "0";
+		}
+	}
+
 }

@@ -38,7 +38,7 @@
 										<td><?php echo $m->resumen ?></td>
 										<td><?php echo $m->fecha ?></td>
 										<td>
-											<a class="btn btn-primary ver tooltips" data-toggle="modal" data-original-title="Detalles de la Minuta" data-placement="top">
+											<a href="<?php echo base_url('minutas/ver_minuta/'.$m->id_minutas) ?>" class="btn btn-primary tooltips" data-toggle="modal" data-original-title="Detalles de la Minuta" data-placement="top">
 												<i class="fa fa-eye"></i>
 											</a>
 										</td>
