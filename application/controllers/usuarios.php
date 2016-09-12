@@ -10,7 +10,8 @@ class usuarios extends CI_Controller {
 		$data['usuarios'] = $this->us->lista_usuarios();
 		$data['areas'] = $this->am->get_areas();
 		$data['puestos'] = $this->pm->get_puestos();
-		$data['menu'] = $this->mm-> menu();
+		$puesto = $this->session->userdata('id_puestos');
+		$data['menu'] = $this->mm-> menu($puesto);
 		$this->load->view('cuerpo/cabecera');
 		$this->load->view('cuerpo/menu',$data);
 		$this->load->view('usuarios/lista_usuarios',$data);

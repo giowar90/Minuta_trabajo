@@ -6,7 +6,8 @@ class areas extends CI_Controller {
 		$this->load->model('menu_model','mm');
 		$this->load->model('area_model','am');
 		$data['areas'] = $this->am->lista_areas();
-		$data['menu'] = $this->mm-> menu();
+		$puesto = $this->session->userdata('id_puestos');
+		$data['menu'] = $this->mm-> menu($puesto);
 		$this->load->view('cuerpo/cabecera');
 		$this->load->view('cuerpo/menu',$data);
 		$this->load->view('areas/lista_areas',$data);

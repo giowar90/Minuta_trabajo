@@ -74,7 +74,7 @@
 						<ul class="dropdown-menu extended logout">
 							<div class="log-arrow-up"></div>
 							<li class="eborder-top">
-								<a href="#"><i class="fa fa-user"></i> Perfil</a>
+								<a href="#"><i class="fa fa-home"></i> Inicio</a>
 							</li>
 							<li>
 								<a href="<?php echo base_url('') ?>"><i class="icon_key_alt"></i> Cerrar sesión</a>

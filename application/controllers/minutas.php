@@ -5,7 +5,8 @@ class minutas extends CI_Controller {
 	public function nueva_minuta(){
 		$this->load->model('menu_model','mm');
 		$this->load->model('usuarios_model','um');
-		$data['menu'] = $this->mm-> menu();
+		$puesto = $this->session->userdata('id_puestos');
+		$data['menu'] = $this->mm-> menu($puesto);
 		$data['participantes'] = $this->um->lista_usuarios();
 		$this->load->view('cuerpo/cabecera');
 		$this->load->view('cuerpo/menu',$data);
@@ -61,7 +62,8 @@ class minutas extends CI_Controller {
 	public function lista_minutas(){
 		$this->load->model('menu_model','mm');
 		$this->load->model('minutas_model','mim');
-		$data['menu'] = $this->mm-> menu();
+		$puesto = $this->session->userdata('id_puestos');
+		$data['menu'] = $this->mm-> menu($puesto);
 		$data['minutas'] = $this->mim->lista_minutas();
 		$this->load->view('cuerpo/cabecera');
 		$this->load->view('cuerpo/menu',$data);
@@ -72,7 +74,8 @@ class minutas extends CI_Controller {
 	public function ver_minuta($id_minutas){
 		$this->load->model('menu_model','mm');
 		$this->load->model('minutas_model','mim');
-		$data['menu'] = $this->mm-> menu();
+		$puesto = $this->session->userdata('id_puestos');
+		$data['menu'] = $this->mm-> menu($puesto);
 		$data['minuta'] = $this->mim->minuta_detalles($id_minutas);
 		$data['asistentes'] = $this->mim->actividades($id_minutas);
 		$this->load->view('cuerpo/cabecera');
@@ -84,7 +87,8 @@ class minutas extends CI_Controller {
 	public function minutas_actividades(){
 		$this->load->model('menu_model','mm');
 		$this->load->model('actividades_model','acm');
-		$data['menu'] = $this->mm-> menu();
+		$puesto = $this->session->userdata('id_puestos');
+		$data['menu'] = $this->mm-> menu($puesto);
 		$id_responsable = $this->session->userdata("id_usuario");
 		$data['actividades'] = $this->acm->get_actividades($id_responsable);
 		$this->load->model('menu_model','mm');

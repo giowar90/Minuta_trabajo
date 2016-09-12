@@ -8,7 +8,8 @@ class puestos extends CI_Controller {
 		$this->load->model('area_model','am');
 		$data['puestos'] = $this->pm->lista_puestos();
 		$data['areas'] = $this->am->get_areas();
-		$data['menu'] = $this->mm-> menu();
+		$puesto = $this->session->userdata('id_puestos');
+		$data['menu'] = $this->mm-> menu($puesto);;
 		$this->load->view('cuerpo/cabecera');
 		$this->load->view('cuerpo/menu',$data);
 		$this->load->view('puestos/lista_puestos',$data);

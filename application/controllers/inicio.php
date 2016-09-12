@@ -12,7 +12,8 @@ class inicio extends CI_Controller {
 	}
 
 	public function principal(){
-		$data['menu'] = $this->mm-> menu();
+		$puesto = $this->session->userdata('id_puestos');
+		$data['menu'] = $this->mm-> menu($puesto);
 		$this->load->view('cuerpo/cabecera');
 		$this->load->view('cuerpo/menu',$data);
 		$this->load->view('inicio');

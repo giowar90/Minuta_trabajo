@@ -17,23 +17,7 @@ class login extends CI_Controller {
 			$sesion = $this->lm->login($email,$password);
 			if($sesion){
 				$this->session->set_userdata($sesion[0]);
-				switch ($this->session->userdata('puesto')) {
-					case '':
-						$this->load->view('login',$data);
-					break;
-					case 'Administrador':
-						redirect(base_url().'inicio/principal');
-					break;
-					case 'Vendedor':
-						redirect(base_url().'inicio/principal');
-						// redirect(base_url().'editor');
-					break;
-					case 'suscriptor':
-						redirect(base_url().'suscriptor');
-					break;
-					default:
-						$this->load->view('login',$data);
-				}
+				redirect(base_url().'inicio/principal');
 			} else{
 				$this->session->sess_destroy();
 				$this->load->view('login');
